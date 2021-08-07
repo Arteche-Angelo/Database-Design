@@ -24,6 +24,9 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  top: 50%;
+  left: 50%;
+
 }
 
 button:hover {
@@ -96,6 +99,18 @@ span.psw {
   color: red;
   cursor: pointer;
 }
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+}
 
 /* Add Zoom Animation */
 .animate {
@@ -129,14 +144,14 @@ span.psw {
 
 <h2>Login Form</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" >Login</button>
 
 <div id="id01" class="Model">
   
   <form class="Model-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Model">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="img_avatar2.png" alt="Filler" class="Filler">
     </div>
 
     <div class="container">
