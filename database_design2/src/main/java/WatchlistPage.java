@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class WatchlistPage {  
-public static boolean create(String Watchlist_ID, String Watchlist_Name) {
+public static boolean create(int Watchlist_ID, String Watchlist_Name, String StockTicker) {
 
 boolean status = false;
 String sql = null;
@@ -20,7 +20,7 @@ try {
 		System.out.println("connected to database arteche");
 		status =true;
 		stmnt = conn1.createStatement();
-		sql="Watchlist info (Watchlist_ID, Watchlist_Name, Stock Ticker) values (" +"'" + Watchlist_ID +"', '"+Watchlist_Name+"', '"+ "0" + "');" ; 
+		sql="Watchlist info (Watchlist_ID, Watchlist_Name, Stock Ticker) values (" +"'" + Watchlist_ID +"', '"+Watchlist_Name+"', '"+StockTicker+"');" ; 
 		stmnt.execute(sql);
 	}
 	
@@ -34,3 +34,4 @@ catch (SQLException ex)
 		return status;
 }
 }
+
