@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="http://localhost:8080/Database_Design/CreateAccountServlet" method="post">
+  <div class="container">
+    <h1>Create a Account</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="Username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Create account</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="Login_page.html">Sign in</a>.</p>
+  </div>
+</form>
+  </body>
+</html>
