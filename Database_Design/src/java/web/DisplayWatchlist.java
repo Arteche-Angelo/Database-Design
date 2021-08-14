@@ -29,7 +29,7 @@ public class DisplayWatchlist extends HttpServlet {
     String sql = null;
     Statement stmnt = null;
     Connection conn1 = null;
-
+    String prevName =null;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -45,13 +45,19 @@ public class DisplayWatchlist extends HttpServlet {
                 stmnt = conn1.createStatement();
                 sql = "select WatchlistName,StockTicker from watchlist where AccountNumber= '" + LoginSQL.AccountNumber + "' ;";
                 ResultSet rs = stmnt.executeQuery(sql);
-
+                
                 
                 while (rs.next()) {
                     String WatchlistName = rs.getString("WatchlistName");
+                    if(WatchlistName.equals(prevName)){
+                        String Ticker = rs.getString("StockTicker");
+                    out.println("<p>" + Ticker + "</p>");
+                    }else{
                 out.println("<p>" + WatchlistName + "</p>");
                     String Ticker = rs.getString("StockTicker");
                     out.println("<p>" + Ticker + "</p>");
+                    }
+                    prevName = WatchlistName;
 
                 }
 
